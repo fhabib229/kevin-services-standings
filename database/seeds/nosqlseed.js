@@ -81,6 +81,7 @@ const generateBatch = (numOfRecords) => {
 
 const insertBulkBatch = () => {
   const startTime = new Date().getTime();
+  let count = 0;
   for (var i = 0; i < 500; i++) {
     db.batch(generateBatch(), { prepare: true })
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
@@ -161,7 +162,7 @@ const insertBulkBatch = () => {
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
-    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 || 10,000
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 | 10,000
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
@@ -241,8 +242,13 @@ const insertBulkBatch = () => {
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
     .then( ()=> db.batch(generateBatch(), { prepare: true}))
-    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 || 10,000
-    .then(() => console.log(`Successfully inserted 20,000 records in ${new Date().getTime() - startTime}ms`));
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 | 20,000
+    .then(() => {
+      count++;
+      if (count === 500) {
+        console.log(`Successfully inserted 10,000,000 records in ${new Date().getTime() - startTime}ms`);
+      }
+    });
   }
 };
 
