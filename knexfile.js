@@ -5,7 +5,7 @@ module.exports = {
       host: '127.0.0.1',
       user: 'fluffy',
       password: 'troiscubed',
-      database: 'espn',
+      database: 'espndev',
     },
     seeds: {
       directory: './database/seeds',

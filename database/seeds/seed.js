@@ -79,4 +79,4 @@ exports.seed = knex => knex('standings').del()
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
-    .then(() => console.log('10m insertions took ', new Date().getTime() - startTime, 'ms')));
+    .then(() => console.log(`Successfully inserted 10,000,000 records in ${new Date().getTime() - startTime}ms`)));
