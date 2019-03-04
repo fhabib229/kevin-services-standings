@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['ESPN Standings Service'],
+  app_name: ['ESPN Standings Service EC2'],
   /**
    * Your New Relic license key.
    */
