@@ -13,6 +13,7 @@
   "author": "Kevin Phung",
   "license": "ISC",
   "devDependencies": {
+    "artillery": "^1.6.0-27",
     "axios": "^0.18.0",
     "babel-core": "^6.23.1",
     "babel-jest": "^23.6.0",
@@ -35,6 +36,7 @@
     "jquery": "^3.1.1",
     "knex": "^0.16.3",
     "mongoose": "^4.9.6",
+    "newrelic": "^5.5.0",
     "pg": "^7.8.0",
     "react-awesome-modal": "^2.0.5",
     "react-test-renderer": "^15.6.2",
