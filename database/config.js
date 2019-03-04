@@ -4,7 +4,7 @@ const knex = require('knex')({
     host: '0.0.0.0',
     user: 'fluffy',
     password: 'troiscubed',
-    database: 'espn',
+    database: 'espndev',
   },
 });
 
