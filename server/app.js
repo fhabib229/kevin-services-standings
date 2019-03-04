@@ -13,7 +13,7 @@ app.get('/espn/teamstandings', (req, res) => {
   Standings.reset()
     .orderBy('id', 'DESC')
     .query((qb) => {
-      qb.limit(51);
+      qb.limit(32);
     })
     .fetch()
     .then((data) => {
