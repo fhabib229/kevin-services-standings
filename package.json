@@ -7,7 +7,7 @@
     "react": "webpack -d --watch",
     "server": "nodemon server/index.js rs",
     "start": "nodemon server/index.js",
-    "seed": "knex seed:run",
+    "seed": "knex seed:run --env production",
     "test": "jest"
   },
   "author": "Kevin Phung",
