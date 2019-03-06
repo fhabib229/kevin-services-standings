@@ -12,10 +12,9 @@ module.exports = {
   //   },
   // },
   production: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       host: 'ec2-34-219-142-73.us-west-2.compute.amazonaws.com',
-      port: 5432,
       user: 'fluffy',
       password: 'troiscubed',
       database: 'espn',
