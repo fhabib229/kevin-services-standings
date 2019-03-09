@@ -1,7 +1,7 @@
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: 'ec2-34-219-142-73.us-west-2.compute.amazonaws.com',
+    host: 'ec2-34-217-211-230.us-west-2.compute.amazonaws.com',
     user: 'fluffy',
     password: 'troiscubed',
     database: 'espn',
