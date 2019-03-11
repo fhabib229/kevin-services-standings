@@ -3,17 +3,13 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
-module.exports = {
-  entry: `${SRC_DIR}/index.js`,
-  output: {
-    filename: 'bundle.js',
-    path: DIST_DIR,
-  },
+const common = {
+  context: __dirname + '/client',
   module: {
     loaders: [
       {
         test: /\.jsx?/,
-        include: SRC_DIR,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015'],
@@ -22,3 +18,26 @@ module.exports = {
     ],
   },
 };
+
+const client = {
+  entry: `${SRC_DIR}/index.js`,
+  output: {
+    filename: 'bundle.js',
+    path: DIST_DIR,
+  }
+};
+
+const server = {
+  entry: `${SRC_DIR}/server.js`,
+  target: 'node',
+  output: {
+    filename: 'bundle-server.js',
+    path: DIST_DIR,
+    libraryTarget: 'commonjs-module'
+  }
+};
+
+module.exports = [
+  Object.assign({}, common, client),
+  Object.assign({}, common, server)
+];
